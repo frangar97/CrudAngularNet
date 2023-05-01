@@ -17,6 +17,7 @@ builder.Services.AddDbContextPool<BackEndContext>(options => {
 });
 
 builder.Services.AddTransient(typeof(IRepository<>),typeof(BaseRepository<>));
+builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
 
 var app = builder.Build();
 

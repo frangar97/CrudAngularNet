@@ -6,6 +6,6 @@ namespace Core.Features.Base
     {
         IRepository<EmployeeEntity> EmployeeRepository { get; }
         void SaveChanges();
-        void SaveChangesAsync();
+        Task SaveChangesAsync();
     }
 }
