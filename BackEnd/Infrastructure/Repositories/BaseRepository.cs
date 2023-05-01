@@ -29,9 +29,9 @@ namespace Infrastructure.Repositories
             }
         }
 
-        public Task<T?> FindAsync(int id)
+        public async Task<T?> FindAsync(int id)
         {
-            throw new NotImplementedException();
+           return await _entities.FindAsync(id);
         }
 
         public IEnumerable<T> GetAll()

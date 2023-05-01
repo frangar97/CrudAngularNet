@@ -1,4 +1,5 @@
 using Core.Features.Base;
+using Core.Features.Employee.Service;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -16,8 +17,9 @@ builder.Services.AddDbContextPool<BackEndContext>(options => {
     options.UseNpgsql(builder.Configuration.GetConnectionString("BackEndConnection"));
 });
 
-builder.Services.AddTransient(typeof(IRepository<>),typeof(BaseRepository<>));
+builder.Services.AddScoped(typeof(IRepository<>),typeof(BaseRepository<>));
 builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
+builder.Services.AddTransient<IEmployeeService, EmployeeService>();
 
 var app = builder.Build();
 
