@@ -1,0 +1,26 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Created Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <th scope="row">{{employee.id}}</th>
+                <td>{{employee.name}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.createdDate | date: 'dd/MM/yyyy'}}</td>
+                <td>
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger" style="margin-left: 10px;"
+                        (click)="DeleteEmployee(employee.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
