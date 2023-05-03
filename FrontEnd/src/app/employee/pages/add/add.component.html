@@ -5,9 +5,7 @@
         <span class="form-text text-danger"
             *ngIf="createEmployeeForm.controls['name'].getError('required') && createEmployeeForm.controls['name'].touched">The
             name is required</span>
-        <span class="form-text text-danger"
-            *ngIf="createEmployeeForm.controls['name'].getError('minlength') && createEmployeeForm.controls['name'].touched">The
-            name must at least have a length of 10.</span>
+
     </div>
     <div class="form-group mt-3">
         <label for="exampleInputPassword1">Last Name:</label>
@@ -15,9 +13,7 @@
         <span class="form-text text-danger"
             *ngIf="createEmployeeForm.controls['lastName'].getError('required') && createEmployeeForm.controls['lastName'].touched">The
             lastname is required</span>
-        <span class="form-text text-danger"
-            *ngIf="createEmployeeForm.controls['lastName'].getError('minlength') && createEmployeeForm.controls['lastName'].touched">The
-            lastname must at least have a length of 10.</span>
+
     </div>
     <button type="submit" class="btn btn-primary mt-5">Submit</button>
 </form>

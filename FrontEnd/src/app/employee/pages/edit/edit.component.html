@@ -1,1 +1,19 @@
-<p>{{employee.name}}</p>
+<form [formGroup]="editEmployeeForm" (submit)="submit()">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" class="form-control" formControlName="name">
+        <span class="form-text text-danger"
+            *ngIf="editEmployeeForm.controls['name'].getError('required') && editEmployeeForm.controls['name'].touched">The
+            name is required</span>
+
+    </div>
+    <div class="form-group mt-3">
+        <label for="exampleInputPassword1">Last Name:</label>
+        <input type="text" class="form-control" formControlName="lastName">
+        <span class="form-text text-danger"
+            *ngIf="editEmployeeForm.controls['lastName'].getError('required') && editEmployeeForm.controls['lastName'].touched">The
+            lastname is required</span>
+
+    </div>
+    <button type="submit" class="btn btn-primary mt-5">Submit</button>
+</form>
