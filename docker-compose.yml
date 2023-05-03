@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:14.2'
+    ports:
+      - "5432:5432"
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: backend
+    volumes:
+      - ./db-data/postgres/:/var/lib/postgresql/data/
+
+  backend:
+    build:
+      context: ./BackEnd
+      dockerfile: ./../BackEnd/Dockerfile
+    ports:
+      - "5092:80"
+  
+  frontend:
+    build:
+      context: ./FrontEnd
+      dockerfile: ./../FrontEnd/Dockerfile
+    ports:
+      - "4200:81"
