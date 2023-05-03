@@ -23,6 +23,21 @@ namespace API.Controllers
             return Ok(employeesDTO);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEmployee(int id)
+        {
+            var employeeEntity = await employeeService.GetEmployeeById(id);
+
+            if(employeeEntity  == null)
+            {
+                return NotFound();
+            }
+
+            var employeeDTO = new EmployeeDTO { Id = employeeEntity.Id, Name = employeeEntity.Name, LastName = employeeEntity.LastName, CreatedDate = employeeEntity.CreatedDate };
+            return Ok(employeeDTO);
+
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeDTO createEmployeeDTO)
         {
