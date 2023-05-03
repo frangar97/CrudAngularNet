@@ -16,7 +16,7 @@
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.createdDate | date: 'dd/MM/yyyy'}}</td>
                 <td>
-                    <button class="btn btn-warning">Edit</button>
+                    <button [routerLink]="['/edit',employee.id]" class="btn btn-warning">Edit</button>
                     <button class="btn btn-danger" style="margin-left: 10px;"
                         (click)="DeleteEmployee(employee.id)">Delete</button>
                 </td>

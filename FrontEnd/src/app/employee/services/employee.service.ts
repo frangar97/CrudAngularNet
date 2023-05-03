@@ -16,6 +16,10 @@ export class EmployeeService {
     return this.http.get<IEmployee[]>(`${this.APIURL}/api/employee`);
   }
 
+  GetEmployee(id: number): Observable<IEmployee> {
+    return this.http.get<IEmployee>(`${this.APIURL}/api/employee/${id}`);
+  }
+
   CreateEmployee(employee: ICreateEmployee): Observable<IEmployee> {
     return this.http.post<IEmployee>(`${this.APIURL}/api/employee`, employee);
   }
