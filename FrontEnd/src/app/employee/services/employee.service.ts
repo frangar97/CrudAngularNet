@@ -8,7 +8,7 @@ import { ICreateEmployee } from '../interface/ICreateEmployee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  APIURL = "http://backend:5092";
+  APIURL = "http://localhost:5092";
 
   constructor(private http: HttpClient) { }
 
