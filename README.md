@@ -8,6 +8,6 @@ The backend solution is divided in the next projects.
 * Infrastructure
 * Persistence
 
-To execute the application in docker run #### docker-compose up -d in the root of the project.
+To execute the application in docker run ####docker-compose up -d in the root of the project.
 
 [Explanation video](https://drive.google.com/file/d/1urdH7plmJmEncic0YIw9W5G9FW22LzoV/view?usp=sharing)
